@@ -88,3 +88,9 @@
     font-display: swap;
 }
 
+*{
+    font-family: "Apercu", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
