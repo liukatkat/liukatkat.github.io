@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>liukatkat's portfolio</title>
+
+    <!-- bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="icon" href="./docs/tab icon.png">
+
+</head>
+
+<body>
+<!-- nav bar -->
+<div id="nav-placeholder"></div>
+
+<!-- featured projects -->
+<div class="mt-5 mb-5  d-flex justify-content-center vh-100 flex-column align-items-center">
+    <div class="pb-3" id="feature-demo"><span class="display-1"></span></div>
+
+    <div>coming soon...</div>
+
+    <div class="pt-3 d-flex justify-content-center align-items-center" style="width: 100%">
+        <div class="card ms-4" aria-hidden="true" style="width: 20%">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a class="btn btn-outline-dark disabled placeholder col-6"></a>
+            </div>
+        </div>
+        <div class="card ms-4" aria-hidden="true" style="width: 20%">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a class="btn btn-outline-dark disabled placeholder col-6"></a>
+            </div>
+        </div>
+        <div class="card ms-4" aria-hidden="true" style="width: 20%">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a class="btn btn-outline-dark disabled placeholder col-6"></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    made with ❤️ by katrina
+</div>
+
+
+<!-- bootstrap scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- navbar script -->
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+    $.get("nav.html", function(data){
+        var updatedData = $(data);
+        var homeElement = updatedData.find("#proj");
+
+        homeElement.replaceWith('<a class="nav-link" id="proj" href="./feature.html"><span class="sr-only">👉🏻 </span>featured projects</a>');
+
+        $("#nav-placeholder").replaceWith(updatedData);
+    });
+</script>
+
+<!-- type in effect script -->
+<script>
+    var i = 0;
+    var txt = 'featured projects'; /* The text */
+    var speed = 60; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.querySelector("#feature-demo span").textContent += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter(); // Call the function to start the effect
+</script>
+</body>
+</html>

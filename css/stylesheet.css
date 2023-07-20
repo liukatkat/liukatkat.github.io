@@ -100,3 +100,37 @@
     font-style: normal;
 }
 
+#demo span:after {
+    content: '|'; /* The cursor */
+    animation: blink 1.5s infinite;
+}
+
+#feature-demo span:after {
+    content: ""; /* The cursor */
+    display: inline-block;
+    background-image: url("../docs/star.png");
+    background-size: 90px 90px; /* Set the size you want here */
+    width: 90px; /* Match width and height to background-size */
+    height: 90px;
+    animation: blink 1.5s infinite;
+}
+
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+

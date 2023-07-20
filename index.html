@@ -1,25 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>liukatkat</title>
+    <title>liukatkat's portfolio</title>
+    <link rel="icon" href="./docs/tab icon.png">
 
     <!-- bootstrap stylesheet -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/stylesheet.css">
+
 </head>
+
 <body>
-    <div class="d-flex justify-content-center vh-100 flex-column">
-        <div class="h1 align-self-center text-center" style="width: 50%">hi stranger on the internet!</div>
-        <div class="h6 align-self-center">here's my personal website.</div>
-        <img src="../assets/absurd.design - Chapter 1 - 01.png" class="rounded mx-auto d-block" style="width:20%">
-        <div class="h6 align-self-center pb-3" style="color: lightgrey; font-size: x-small">illustration(s) from <a href="https://absurd.design/">absurd.design</a>.</div>
-        <a href="./home.html" class="btn btn-outline-dark align-self-center" role="button" aria-pressed="true" style="width:fit-content">let's go!</a>
+    <!-- nav bar -->
+    <div id="nav-placeholder"></div>
+
+    <!-- intro & resume -->
+    <div class="mt-5 pb-5 d-flex justify-content-center vh-90 flex-column align-items-center overflow-auto">
+        <div class="pb-3" id="demo"><span class="display-1"></span></div>
+        <div class="h3 text-center" style="width: 50%">my name is katrina liu</div>
+        <div class="h6 pb-3 text-center" style="width: 50%; color: darkgray">aka tin nam aka
+            liukatkat.</div>
+        <img src="../assets/absurd.design - Chapter 1 - 05.png" class="rounded mx-auto d-block"
+             style="width:20%" alt="an abstract illustration of a person wearing a graduation cap as a parachute">
+        <div class="h6 pb-3" style="color: lightgrey; font-size: x-small">illustration(s) from
+            <a href="https://absurd.design/">absurd.design</a>.
+        </div>
+        <div class="text-center pb-3" style="width: 50%">i am a student studying computer
+            science
+            at the university of pennsylvania. welcome to my little spot on the internet.</div>
+        <div class="overflow-auto">
+            <a href="../docs/resume/Resume_Katrina_Liu_0623.pdf" download="KatrinaLiu_Resume.pdf"
+               class="btn btn-outline-dark align-self-center" role="button" aria-pressed="true"
+               style="width:fit-content">download my resume </a>
+            <a href="feature.html"
+               class="btn btn-dark align-self-center" role="button" aria-pressed="true"
+               style="width:fit-content">go to my projects ></a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        made with ❤️ by katrina
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- navbar script -->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+        $.get("nav.html", function(data){
+            var updatedData = $(data);
+            var homeElement = updatedData.find("#home");
+
+            homeElement.replaceWith('<a class="nav-link" id="home" href="./index.html"><span class="sr-only">👉🏻 </span>home</a>');
+
+            $("#nav-placeholder").replaceWith(updatedData);
+        });
+    </script>
+
+    <!-- type in effect script -->
+    <script>
+        var i = 0;
+        var txt = 'hi there <3'; /* The text */
+        var speed = 60; /* The speed/duration of the effect in milliseconds */
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.querySelector("#demo span").textContent += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        typeWriter(); // Call the function to start the effect
+    </script>
 </body>
 </html>
