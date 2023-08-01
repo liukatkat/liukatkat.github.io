@@ -106,12 +106,12 @@
 }
 
 #feature-demo span:after {
-    content: ""; /* The cursor */
+    content: "";
     display: inline-block;
     background-image: url("../docs/star.png");
-    background-size: 90px 90px; /* Set the size you want here */
-    width: 90px; /* Match width and height to background-size */
-    height: 90px;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
     animation: blink 1.5s infinite;
 }
 
@@ -133,4 +133,15 @@
     padding: 10px 0;
 }
 
+
+ .left-on {
+     text-align: left;
+ }
+
+
+@media (max-width: 767.98px) {
+    .custom-text {
+        text-align: center;
+    }
+}
 
